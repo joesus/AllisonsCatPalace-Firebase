@@ -1,19 +1,25 @@
 'use strict';
 
-angular
-  .module('allisonsCatPalaceFirebaseApp', [
+var app = angular.module('allisonsCatPalaceFirebaseApp',
+  [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'kittenControllers',
+    'ngAnimate',
+    'firebase'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  .config(['$routeProvider', '$locationProvider',
+    function($routeProvider) {
+      $routeProvider.
+        when('/kittens', {
+          templateUrl: 'views/kittens/kitten-index.html',
+          controller: 'KittenIndexCtrl'
+        }).
+        otherwise({
+          redirectTo: '/kittens'
+        });
+    }
+  ])
+  .constant('FIREBASE_URL', 'https://catpalace.firebaseio.com/');
