@@ -34,7 +34,10 @@
             <div class="col-xs-9">
                 <p>{{kitten.about}}.</p>
                 <a href="/#/kittens/{{kitten.id}}">
-                    <p class="lead"><button class="btn btn-default">More Details</button></p>
+                    <button class="btn btn-default">More Details</button>
+                </a>
+                <a href="/#/kittens" ng-click="deleteKitten(kittenId)">
+                    <button class="btn btn-danger">Delete Kitten</button>
                 </a>
             </div>
             <div class="col-xs-3"></div>

@@ -17,6 +17,10 @@ var app = angular.module('allisonsCatPalaceFirebaseApp',
           templateUrl: 'views/kittens/kitten-index.html',
           controller: 'KittenIndexCtrl'
         }).
+        when('/kittens/:kittenId', {
+          templateUrl: 'views/kitten-show.html',
+          controller: 'KittenShowCtrl'
+        }).
         otherwise({
           redirectTo: '/kittens'
         });

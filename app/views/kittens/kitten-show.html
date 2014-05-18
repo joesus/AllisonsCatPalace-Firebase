@@ -1,0 +1,72 @@
+<img ng-src="{{kitten.picture}}" class="kitten">
+
+<h1>{{kitten.name}}</h1>
+
+<p>{{kitten.greeting}}</p>
+
+<a href="/#/kittens" ng-click="deleteKitten(kittenId)">
+    <button class="btn btn-danger">Delete Kitten</button>
+</a>
+
+<ul class="kitten-detail">
+    <li>
+        <span>Adoptable?</span>
+        <dl>
+            <dt>{{kitten.adoptable}}</dt>
+        </dl>
+    </li>
+    <li>
+        <span>Cuteness Level</span>
+        <dl>
+            <dd>{{kitten.cutenesslevel}}</dd>
+            <dd>The scale starts at 100 so a {{kitten.cutenesslevel}} is actually 10{{kitten.cutenesslevel}}...</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Age</span>
+        <dl>
+            <dd>{{kitten.age}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Gender</span>
+        <dl>
+            <dd>{{kitten.gender}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Birthplace</span>
+        <dl>
+            <dd>{{kitten.birthcity}}, {{kitten.birthstate}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Dimensions</span>
+        <dl>
+            <dt>Weight</dt>
+            <dd>{{kitten.weight}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Favorites</span>
+        <dl>
+            <dt>Food</dt>
+            <dd>{{kitten.favoritefood}}</dd>
+            <dt>Toy</dt>
+            <dd>{{kitten.favoritetoy}}</dd>
+            <dt>Bathroom</dt>
+            <dd>{{kitten.favoritebathroom}}</dd>
+            <dt>Napspot</dt>
+            <dd>{{kitten.favoritenapspot}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Dress-Up</span>
+        <dl>
+            <dt>Favorite Hat</dt>
+            <dd>{{kitten.favoritehat}}</dd>
+            <dt>Favorit Outfit</dt>
+            <dd>{{kitten.favoriteoutfit}}</dd>
+        </dl>
+    </li>
+</ul>
