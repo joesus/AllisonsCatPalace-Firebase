@@ -21,3 +21,18 @@ kittenControllers.controller('KittenShowCtrl', function ($scope, $routeParams, K
   };
 });
 
+kittenControllers.controller('KittenEditCtrl', function($scope, $routeParams, Kitten, $location) {
+
+  $scope.kitten =  Kitten.find($routeParams.kittenId);
+
+  // Required to link to firebase ids... maybe look into a better way to do this...
+  $scope.kittenId = $routeParams.kittenId;
+
+  $scope.editKitten = function() {
+    $scope.kitten.$update($scope.kitten).then(function() {
+      $location.path('/kittens/' + $scope.kittenId );
+    })
+  }
+
+});
+
