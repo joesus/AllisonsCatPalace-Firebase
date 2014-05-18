@@ -17,6 +17,10 @@ var app = angular.module('allisonsCatPalaceFirebaseApp',
           templateUrl: 'views/kittens/kitten-index.html',
           controller: 'KittenIndexCtrl'
         }).
+        when('/kitten-list', {
+          templateUrl: 'views/kittens/kitten-list.html',
+          controller: 'KittenIndexCtrl'
+        }).
         when('/new-kitten', {
           templateUrl: 'views/kittens/kitten-create.html',
           controller: 'KittenCreateCtrl'

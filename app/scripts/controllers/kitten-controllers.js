@@ -9,8 +9,11 @@ kittenControllers.controller('KittenIndexCtrl', function ($scope, Kitten) {
   $scope.deleteKitten = function(kittenId) {
     Kitten.delete(kittenId);
   };
-
 });
+
+//kittenControllers.controller('KittenListCtrl', function($scope, $routeParams, Kitten) {
+//    $scope.kittens = Kitten.all;
+//});
 
 kittenControllers.controller('KittenShowCtrl', function ($scope, $routeParams, Kitten) {
   $scope.kittenId = $routeParams.kittenId;

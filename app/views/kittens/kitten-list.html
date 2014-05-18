@@ -1,0 +1,50 @@
+<h3>Kittens</h3>
+{{message}}
+<table class="table table-responsive table-striped">
+    <thead>
+    <td>Id</td>
+    <td>First Name</td>
+    <td>Gender</td>
+    <td>Birthplace</td>
+    <td>Weight</td>
+    <td>Age</td>
+    <td>Favorite Food</td>
+    <td>Favorite Toy</td>
+    <td>Favorite Napspot</td>
+    <td>Actions</td>
+    </thead>
+    <tbody>
+    <tr ng-repeat="(kittenId, kitten) in kittens">
+        <td>
+            {{kitten.id}}
+        </td>
+        <td>
+            {{kitten.name}}
+        </td>
+        <td>
+            {{kitten.gender}}
+        </td>
+        <td>
+            {{kitten.birthcity}}, {{kitten.birthstate}}
+        </td>
+        <td>
+            {{kitten.weight}}
+        </td>
+        <td>
+            {{kitten.age}}
+        </td>
+        <td>
+            {{kitten.favoritefood}}
+        </td>
+        <td>
+            {{kitten.favoritetoy}}
+        </td>
+        <td>
+            {{kitten.favoritenapspot}}
+        </td>
+        <td>
+            <a href="/#/kittens/{{kittenId}}">Show</a> | <a href="/#/kittens/{{kittenId}}/edit">Edit</a> | <a href="/#/kitten-list" ng-click="deleteKitten(kittenId)">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
