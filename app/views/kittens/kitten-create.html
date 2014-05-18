@@ -84,6 +84,11 @@
         </div>
 
         <div class="form-group">
+            <label>Greeting</label>
+            <input ng-model="kitten.greeting" type="text" name="greeting" placeholder="Hi my name is {{kitten.name}}!" class="form-control">
+        </div>
+
+        <div class="form-group">
             <div class="controls">
                 <a class="btn" ng-click="cancel()">Cancel</a>
                 <input type="submit" class="btn btn-success" value="Add Kitten"/>
