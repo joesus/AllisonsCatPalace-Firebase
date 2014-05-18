@@ -1,0 +1,45 @@
+<div id="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Cats
+                    <p class="lead">Who Reside in the Palace</p>
+                </h1>
+            </div>
+            <div class="col-md-5">
+                <div class="well well-lg">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Allison's Cat Palace was built with an Angularjs frontend courtesy of <a href="https://github.com/yeoman/">Yeoman</a> and a <a href="https://www.firebase.com/">firebase</a> backend.
+                            It was styled with Bootstrap, again courtesy of Yeoman, and the JSON data for the seed file was created with help from
+                            <a href="placekitten.com">placekitten.com</a> and <a href="http://www.json-generator.com/">json-generator.com</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /cont -->
+</div>
+
+
+<!--/stories-->
+<div class="row col-md-10 col-md-offset-2" ng-repeat="(kittenId, kitten) in kittens | filter:search">
+    <br>
+    <div class="col-md-2 col-sm-3 text-center story-img">
+        <a href="#"><img ng-click="animateKitten(this)" id="kitten-{{kitten.id}}" ng-src="{{kitten.picture}}" class="img-circle" style="width:100px;height:100px"></a>
+    </div>
+    <div class="col-md-10 col-sm-9">
+        <h3>{{kitten.name}}</h3>
+        <div class="row">
+            <div class="col-xs-9">
+                <p>{{kitten.about}}.</p>
+                <a href="/#/kittens/{{kitten.id}}">
+                    <p class="lead"><button class="btn btn-default">More Details</button></p>
+                </a>
+            </div>
+            <div class="col-xs-3"></div>
+        </div>
+        <br><br>
+    </div>
+</div>
+<hr>
