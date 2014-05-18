@@ -36,3 +36,31 @@ kittenControllers.controller('KittenEditCtrl', function($scope, $routeParams, Ki
 
 });
 
+kittenControllers.controller('KittenCreateCtrl', function ($scope, Kitten, $location) {
+
+  $scope.kittens = Kitten.all;
+
+  $scope.kitten = {
+    name: '',
+    adoptable: '',
+    cutenesslevel: '',
+    picture: '',
+    age: '',
+    gender: '',
+    birthcity: '',
+    birthstate: '',
+    about: '',
+    favoritefood: '',
+    favoritetoy: '',
+    favoritebathroom: '',
+    favoritenapspot: '',
+    favoritehat: '',
+    favoriteoutfit: ''
+  };
+
+  $scope.submitKitten = function() {
+    Kitten.create($scope.kitten).then(function (ref) {
+      $location.path('/kittens/' + ref.name());
+    });
+  };
+});

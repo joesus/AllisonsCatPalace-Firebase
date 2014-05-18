@@ -1,0 +1,94 @@
+<img ng-src="http://placehold.it/300x300" class="kitten">
+
+<div class="col-md-6">
+    <h3>Add New Kitten!</h3>
+    <form name="form" role="form" ng-submit="submitKitten(kittenId)">
+
+        <div class="form-group">
+            <label>Image Link</label>
+            <input ng-model="kitten.picture" type="url" name="picture" placeholder="ex: http://..." class="form-control" autofocus>
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input ng-model="kitten.name" type="text" name="name" placeholder="Name" class="form-control" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label>Age</label>
+            <input ng-model="kitten.age" type="text" name="age" placeholder="Age" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Weight</label>
+            <input ng-model="kitten.weight" type="number" name="weight" placeholder="ex: 5.3 lbs" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <select ng-model="kitten.gender" type="text" name="gender" placeholder="Select a Gender" class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Gender Neutral">Gender Neutral</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Cuteness Level (one to a million)</label>
+            <input ng-model="kitten.cutenesslevel" type="number" name="cutenesslevel" placeholder="Cuteness" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Birth City</label>
+            <input ng-model="kitten.birthcity" type="text" name="birthcity" placeholder="ex: Kittenland" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Birth State</label>
+            <input ng-model="kitten.birthstate" type="text" name="birthstate" placeholder="{{kitten.name}} is from {{kitten.city}}..." class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Food</label>
+            <input ng-model="kitten.favoritefood" type="text" name="favoritefood" placeholder="ex: tuna" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Toy</label>
+            <input ng-model="kitten.favoritetoy" type="text" name="favoritetoy" placeholder="ex: yarn" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Bathroom</label>
+            <input ng-model="kitten.favoritebathroom" type="text" name="favoritebathroom" placeholder="ex: LitterBox" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Nap Spot</label>
+            <input ng-model="kitten.favoritenapspot" type="text" name="favoritenapspot" placeholder="ex: sunny place" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Hat</label>
+            <input ng-model="kitten.favoritehat" type="text" name="favoritehat" placeholder="ex: Sombrero" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Outfit</label>
+            <input ng-model="kitten.favoriteoutfit" type="text" name="favoriteoutfit" placeholder="ex: Cop Uniform" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Description/About</label>
+            <input ng-model="kitten.about" type="text" name="about" placeholder="{{kitten.name}} is..." class="form-control">
+        </div>
+
+        <div class="form-group">
+            <div class="controls">
+                <a class="btn" ng-click="cancel()">Cancel</a>
+                <input type="submit" class="btn btn-success" value="Add Kitten"/>
+            </div>
+        </div>
+        <a href="/kittens/{{kitten.id}}">Back to Kitten</a>
+    </form>
+</div>
