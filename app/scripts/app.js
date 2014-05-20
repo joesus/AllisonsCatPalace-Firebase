@@ -8,7 +8,8 @@ var app = angular.module('allisonsCatPalaceFirebaseApp',
     'ngRoute',
     'kittenControllers',
     'ngAnimate',
-    'firebase'
+    'firebase',
+    'rootController'
   ])
   .config(['$routeProvider', '$locationProvider',
     function($routeProvider) {
