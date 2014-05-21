@@ -1,10 +1,10 @@
 'use strict';
 
-app.factory('Kitten', function ($firebase, FIREBASE_URL) {
+app.factory('Kitten', function ($firebase, FIREBASE_URL, $rootScope) {
   var ref = new Firebase(FIREBASE_URL + 'kittens');
   var kittens = $firebase(ref);
 
-  kittenRef.on('value', function(allKittensSnapshot) {
+  ref.on('value', function(allKittensSnapshot) {
     var count = 0;
     if(allKittensSnapshot.hasChildren()) {
       allKittensSnapshot.forEach(function(kittenSnapshot) {
