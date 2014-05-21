@@ -2,18 +2,21 @@
 
 var kittenControllers = angular.module('kittenControllers', []);
 
-kittenControllers.controller('KittenIndexCtrl', function ($scope, Kitten) {
+kittenControllers.controller('KittenIndexCtrl', function ($scope, $rootScope, Kitten) {
 
   $scope.kittens = Kitten.all;
 
   $scope.deleteKitten = function(kittenId) {
     Kitten.delete(kittenId);
   };
-});
 
-//kittenControllers.controller('KittenListCtrl', function($scope, $routeParams, Kitten) {
-//    $scope.kittens = Kitten.all;
-//});
+  $scope.currentPage = 0;
+  $scope.pageSize = 10;
+
+  $scope.numberOfPages=function(){
+    return Math.ceil($rootScope.kittenCount/$scope.pageSize);
+  };
+});
 
 kittenControllers.controller('KittenShowCtrl', function ($scope, $routeParams, Kitten) {
   $scope.kittenId = $routeParams.kittenId;

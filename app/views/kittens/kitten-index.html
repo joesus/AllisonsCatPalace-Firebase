@@ -26,8 +26,8 @@
 
 
 <!--/stories-->
-<div class="row col-md-10 col-md-offset-2" ng-repeat="(kittenId, kitten) in kittens | filter:search">
-    <br>
+<div class="row col-md-10 col-md-offset-2" ng-repeat="(kittenId, kitten) in kittens | filter:search | orderByPriority | startFrom:currentPage*pageSize | limitTo:pageSize">
+  <br>
     <div class="col-md-2 col-sm-3 text-center story-img">
         <a href="#"><img ng-click="animateKitten(this)" id="kitten-{{kitten.id}}" ng-src="{{kitten.picture}}" class="img-circle" style="width:100px;height:100px"></a>
     </div>
@@ -47,4 +47,9 @@
         <br><br>
     </div>
 </div>
+<ul class="pager">
+  <li><a href="" ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">Previous</a></li>
+  {{currentPage+1}}/{{numberOfPages()}}
+  <li><a href="" ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage = currentPage + 1">Next</a></li>
+</ul>
 <hr>
