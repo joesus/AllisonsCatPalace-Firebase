@@ -6,89 +6,90 @@
 
     <form name="form" role="form" ng-submit="editKitten()">
 
-        <div class="form-group">
-            <label>Image Link</label>
-            <input ng-model="kitten.picture" type="url" name="picture" placeholder="ex: http://..." class="form-control" autofocus>
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.picture" name="picture" type="url" required class="form-control" />
+        <label placeholder="ex: http://..." alt="Enter the url of your image"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Name</label>
-            <input ng-model="kitten.name" type="text" name="name" placeholder="Name" class="form-control" required autofocus>
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.name" name="name" type="text" class="form-control" required />
+        <label placeholder="name" alt="Enter a Name"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Age</label>
-            <input ng-model="kitten.age" type="text" name="age" placeholder="Age" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.age" name="age" type="text" class="form-control" required />
+        <label placeholder="age" alt="Enter Age" ></label>
+      </div>
 
-        <div class="form-group">
-            <label>Weight</label>
-            <input ng-model="kitten.weight" type="float" name="weight" placeholder="ex: 5.3 lbs" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.weight" type="text" name="weight" class="form-control" pattern="[0-9.]+" required />
+        <label placeholder="ex: 5.3 lbs" alt="Enter Weight"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Gender</label>
-            <select ng-model="kitten.gender" type="text" name="gender" placeholder="Select a Gender" class="form-control">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Gender Neutral">Gender Neutral</option>
-            </select>
-        </div>
+      <div class="form-group">
+        <select ng-model="kitten.gender" type="text" name="gender" class="form-control" required>
+          <option value="" disabled selected></option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Gender Neutral">Gender Neutral</option>
+        </select>
+        <label placeholder="gender" alt="Select a Gender"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Cuteness Level (one to a million)</label>
-            <input ng-model="kitten.cutenesslevel" type="number" name="cutenesslevel" placeholder="Cuteness" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.cutenesslevel" type="number" name="cutenesslevel" class="form-control" required />
+        <label placeholder="Cuteness" alt="Cuteness"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Birth City</label>
-            <input ng-model="kitten.birthcity" type="text" name="birthcity" placeholder="ex: Kittenland" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.birthcity" type="text" name="birthcity" class="form-control" required />
+        <label placeholder="ex: Kittenland" alt="Enter Birth City"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Birth State</label>
-            <input ng-model="kitten.birthstate" type="text" name="birthstate" placeholder="{{kitten.name}} is from {{kitten.city}}..." class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.birthstate" type="text" name="birthstate" class="form-control" required />
+        <label placeholder="{{kitten.name}} is from {{kitten.birthcity}} {{kitten.birthstate}}" alt="{{kitten.name}} is from {{kitten.city}} {{kitten.birthstate}}"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Favorite Food</label>
-            <input ng-model="kitten.favoritefood" type="text" name="favoritefood" placeholder="ex: tuna" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.favorite[0].food" type="text" name="favoritefood" class="form-control" required />
+        <label placeholder="ex: tuna" alt="Favorite Food"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Favorite Toy</label>
-            <input ng-model="kitten.favoritetoy" type="text" name="favoritetoy" placeholder="ex: yarn" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.favorite[0].toy" type="text" name="favoritetoy" class="form-control" required />
+        <label placeholder="ex: yarn" alt="Favorite Toy"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Favorite Bathroom</label>
-            <input ng-model="kitten.favoritebathroom" type="text" name="favoritebathroom" placeholder="ex: LitterBox" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.favorite[0].bathroom" type="text" name="favoritebathroom" class="form-control" required />
+        <label placeholder="ex: LitterBox" alt="Favorite Bathroom"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Favorite Nap Spot</label>
-            <input ng-model="kitten.favoritenapspot" type="text" name="favoritenapspot" placeholder="ex: sunny place" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.favorite[0].napspot" type="text" name="favoritenapspot" class="form-control" required />
+        <label placeholder="ex: sunny place" alt="Favorite Nap Spot"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Favorite Hat</label>
-            <input ng-model="kitten.favoritehat" type="text" name="favoritehat" placeholder="ex: Sombrero" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.favorite[0].hat" type="text" name="favoritehat" class="form-control" required />
+        <label placeholder="ex: Sombrero" alt="Favorite Hat"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Favorite Outfit</label>
-            <input ng-model="kitten.favoriteoutfit" type="text" name="favoriteoutfit" placeholder="ex: Cop Uniform" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.favorite[0].outfit" type="text" name="favoriteoutfit" class="form-control" required />
+        <label placeholder="ex: cop uniform" alt="Favorite Outfit"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Description/About</label>
-            <input ng-model="kitten.about" type="text" name="about" placeholder="{{kitten.name}} is..." class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.about" type="text" name="about" class="form-control" required />
+        <label placeholder="{{kitten.name}} is... " alt="Description/About"></label>
+      </div>
 
-        <div class="form-group">
-            <label>Greeting</label>
-            <input ng-model="kitten.greeting" type="text" name="greeting" placeholder="Hi my name is {{kitten.name}}!" class="form-control">
-        </div>
+      <div class="form-group">
+        <input ng-model="kitten.greeting" type="text" name="greeting" class="form-control" required />
+        <label placeholder="ex: Hi my name is {{kitten.name}}!" alt="Greeting"></label>
+      </div>
 
         <div class="form-group">
             <div class="controls">
